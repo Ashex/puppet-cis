@@ -21,14 +21,6 @@ class cis::authentication (
     source => 'puppet:///modules/cis/banner',
   }
 
-  file { '/etc/ssh/sshd_config':
-    owner   => 'root',
-    group   => 'root',
-    mode    => '0600',
-    content => template('cis/sshd_config.erb'),
-    notify  => Service["${ssh_daemon}"],
-  }
-
   file { '/etc/login.defs':
     mode    => '0644',
     owner   => 'root',
