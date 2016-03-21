@@ -1,6 +1,5 @@
-# timecapsule #
+# Puppet CIS #
 
-[![Puppet Forge](https://img.shields.io/badge/puppetforge-v0.1.0-blue.svg)](https://forge.puppetlabs.com/swizzley88/cis)
 
 **Table of Contents**
 
@@ -17,6 +16,8 @@
 ## Overview ##
 
 This is the CIS module for RHEL and Ubuntu based systems for server hardenining. 
+This fork has been modified to be compliant with the CIS CentOS 7 Benchmark v1.1.0 guide (04-02-2015). As such some settings may have been removed that weren't scored or were superfluous. Additionally it's been tweaked to play nice with other modules or system updates.
+One item of note is that the SSH Configuration has been removed completely, it can be handled via the saz-ssh module. An example hiera configuration is provided.
 
 
 ## Module Description ##
@@ -32,6 +33,28 @@ You may need to setup a mail relay, or if your in AWS and using SES, replace the
 
 ```
 include ::cis
+#For SSH Configuration
+include ssh::server
+```
+
+You'll need to provide the settings for SSH via hiera, the following configuration should cover the minimum requirements:
+
+```
+ssh::server::options:
+ Protocol: 2
+ LogLevel: INFO
+ X11Forwarding: no
+ MaxAuthTries: 4
+ IgnoreRhosts: yes
+ HostbasedAuthentication: no
+ PermitRootLogin: no
+ PermitEmptyPasswords: no
+ PermitEmptyPasswords: no
+ PermitUserEnvironment: no
+ Ciphers: 'aes128-ctr,aes192-ctr,aes256-ctr'
+ ClientAliveInterval: 300
+ ClientAliveCountMax: 0
+ Banner: /etc/issue
 ```
 
 ## Requirements ##
@@ -48,6 +71,10 @@ mjhas/postfix >=1.0.0
 
 jfryman/selinux >=0.2.3
 
+herculesteam/augeasproviders_pam
+
+erwbgy/limits
+
 ## Compatibility ##
 
   * RHEL 6,7
@@ -62,6 +89,7 @@ This module has been tested on:
 
   - RHEL 6,7
   - Ubuntu 14.04 
+  - CentOS 7
 
 ## Development ##
 
