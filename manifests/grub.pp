@@ -16,11 +16,7 @@ class cis::grub {
     onlyif  => "match password size == 0";
   }
 
-    file { '/boot/grub2/grub.cfg':
-    owner => 'root',
-    group => 'root',
-    mode  => '0640',
-  }
+
 
 
 }
