@@ -15,11 +15,11 @@
 #   Configuration:
 #      system-auth, shell, profile, tty, useradd, pam, banner
 #
-class cis ($secure_grub = $cis::params::secure_grub, $aide = $cis::params::aide, $nat_box = $cis::params::nat_box, $mail = $cis::params::mail) inherits 
+class cis ($aide = $cis::params::aide, $nat_box = $cis::params::nat_box, $mail = $cis::params::mail) inherits 
 cis::params {
-  if $secure_grub {
-    include cis::grub
-  }
+  
+  include cis::grub
+
 
   if $nat_box != true {
     include cis::kernel
