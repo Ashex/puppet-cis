@@ -13,7 +13,7 @@ class cis::authentication (
     mode  => '0640',
   }
 
-  file { ['/etc/issue', '/etc/motd']:
+  file { ['/etc/issue', '/etc/issue.net', '/etc/motd']:
     owner  => 'root',
     group  => 'root',
     mode   => '0644',
