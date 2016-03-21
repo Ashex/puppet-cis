@@ -1,5 +1,6 @@
 {
 	"author": "Dustin Morgan",
+	"Contibutor": "Ahmed Osman",
 	"dependencies": [{
 			"name": "puppetlabs/stdlib",
 			"version_requirement": ">=4.6.0"
@@ -26,7 +27,7 @@
 
 	],
 	"license": "Apache-2.0",
-	"name": "swizzley88-cis",
+	"name": "ashex1-cis",
 	"operatingsystem_support": [{
 			"operatingsystem": "RedHat",
 			"operatingsystemrelease": [ "6",
@@ -50,7 +51,7 @@
 			]
 		}
 	],
-	"project_page": "https://github.com/swizzley/puppet-cis",
+	"project_page": "https://github.com/Ashex1/puppet-cis",
 	"requirements": [{
 			"name": "pe",
 			"version_requirement": "3.x"
@@ -59,12 +60,12 @@
 			"version_requirement": ">=2.7.20 <4.0.0"
 		}
 	],
-	"source": "https://github.com/swizzley/puppet-cis",
+	"source": "https://github.com/Ashex1/puppet-cis",
 	"summary": "CIS Benchmark for server hardening for RHEL and Ubuntu systems",
 	"tags": [ "cis",
 		"nist",
 		"security",
 		"hardening"
 	],
-	"version": "0.1.0"
+	"version": "0.1.1"
 }
