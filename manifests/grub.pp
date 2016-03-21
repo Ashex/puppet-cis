@@ -15,4 +15,12 @@ class cis::grub {
     changes => ["ins password after timeout", "${grub_secret}", "${grub_password}",],
     onlyif  => "match password size == 0";
   }
+
+    file { '/boot/grub2/grub.cfg':
+    owner => 'root',
+    group => 'root',
+    mode  => '0640',
+  }
+
+
 }
