@@ -15,7 +15,7 @@
 #   Configuration:
 #      system-auth, shell, profile, tty, useradd, pam, banner
 #
-class cis ($secure_grub = $cis::params::secure_grub, $aide = $cis::params::aide, $nat_box = $cis::params::nat_box) inherits 
+class cis ($secure_grub = $cis::params::secure_grub, $aide = $cis::params::aide, $nat_box = $cis::params::nat_box, $mail = $cis::params::mail) inherits 
 cis::params {
   if $secure_grub {
     include cis::grub
@@ -34,13 +34,17 @@ cis::params {
       minute  => 0
     }
   }
+
+  if $mail {
+    include cis::mail
+  }
+  
   include cis::packages
   include cis::services
   include cis::banned
   include cis::authentication
   include cis::cron
   include cis::auditd_rules
-  include cis::mail
   include cis::inspect
   include cis::pam
 
