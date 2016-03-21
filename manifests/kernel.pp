@@ -2,6 +2,7 @@ class cis::kernel (
   $accept_all_src_routes = $cis::params::accept_all_src_routes,
   $accept_redirects      = $cis::params::accept_redirects) inherits cis::params {
   require cis::authentication
+  include limits
 
   # Disable
   sysctl { 'fs.suid_dumpable':
@@ -9,6 +10,14 @@ class cis::kernel (
     permanent => 'yes',
     value     => '0',
   }
+
+
+  limits::set{ "memory-core":
+    domain => '*',
+    item   => 'core',
+    hard   => 0,
+  }
+    
 
   sysctl { 'net.ipv4.ip_forward':
     ensure    => 'present',
