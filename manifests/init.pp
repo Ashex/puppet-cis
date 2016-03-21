@@ -42,6 +42,6 @@ cis::params {
   include cis::auditd_rules
   include cis::mail
   include cis::inspect
-  
+  include cis::pam
 
 }

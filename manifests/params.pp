@@ -25,10 +25,9 @@ class cis::params {
       class { selinux: mode => 'enforcing' }
       $umask_daemon = '027'
       $umask_user = '077'
-      $ssh_daemon = 'sshd'
       $http_daemon = 'httpd'
       $firewall_ui = ['firewalld']
-      $service_base = ['crond', $ssh_daemon, 'iptables']
+      $service_base = ['crond', 'iptables']
       $packages = ['cronie-anacron', 'tcp_wrappers', 'iptables-services']
       $disabled = [
         'rhnsd',

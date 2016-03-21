@@ -18,6 +18,8 @@
 		},{
 			"name": "mjhas/postfix",
 			"version_requirement": ">=1.0.0"
+		},{
+			"name": "herculesteam/augeasproviders_pam"
 		}
 	],
 	"license": "Apache-2.0",
