@@ -4,11 +4,11 @@ class cis::mail (
   $relayhost          = $cis::params::relayhost) inherits cis::params {
   include postfix
 
-  if $mail {
-	  class { 'postfix::relay':
-	    sender_hostname    => $sender_hostname,
-	    masquerade_domains => $masquerade_domains,
-	    relayhost          => $relayhost
-	  }
+
+  class { 'postfix::relay':
+    sender_hostname    => $sender_hostname,
+    masquerade_domains => $masquerade_domains,
+    relayhost          => $relayhost
   }
+
 }
