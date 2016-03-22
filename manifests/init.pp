@@ -18,8 +18,6 @@
 class cis ($aide = $cis::params::aide, $nat_box = $cis::params::nat_box, $mail = $cis::params::mail) inherits 
 cis::params {
   
-  include cis::grub
-
 
   if $nat_box != true {
     include cis::kernel
@@ -44,8 +42,10 @@ cis::params {
   include cis::banned
   include cis::authentication
   include cis::cron
+  include cis::grub
   include cis::auditd_rules
   include cis::inspect
   include cis::pam
+  include cis::filesystem
 
 }
