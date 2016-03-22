@@ -47,5 +47,6 @@ cis::params {
   include cis::inspect
   include cis::pam
   include cis::filesystem
+  include cis::ntp
 
 }
