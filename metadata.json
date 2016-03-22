@@ -25,6 +25,8 @@
 			"name": "erwbgy/limits"
 		},{
 			"name": "puppetlabs/mount_providers"
+		},{
+			"name": "puppetlabs/ntp"
 		}
 
 
