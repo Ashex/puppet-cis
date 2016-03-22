@@ -8,7 +8,7 @@ class cis::auditd_rules {
     ensure => present,
     mode   => '0640',
     owner  => 'root',
-    source => 'puppet:///modules/cis/audit.rules'
+    source => 'puppet:///modules/cis/files/audit.rules'
   }
 
 }
