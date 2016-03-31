@@ -71,9 +71,16 @@ mjhas/postfix >=1.0.0
 
 jfryman/selinux >=0.2.3
 
-herculesteam/augeasproviders_pam
+herculesteam/augeasproviders_pam>=2.1.0
 
-erwbgy/limits
+erwbgy/limits>=0.3.1
+
+puppetlabs/mount_providers>=0.0.3"
+
+puppetlabs/ntp>=4.1.2
+
+saz/rsyslog>=3.5.1
+
 
 ## Compatibility ##
 
