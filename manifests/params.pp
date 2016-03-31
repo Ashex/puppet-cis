@@ -20,6 +20,8 @@ class cis::params {
   $masquerade_domains = 'example.org'
   $relayhost = 'receiver.example.org'
   $mail = true
+  $rsyslog_server = 'log'
+  $rsyslog_port = '514'
 
   case $::operatingsystem {
     'RedHat', 'CentOS', 'Fedora' : {

@@ -27,6 +27,8 @@
 			"name": "puppetlabs/mount_providers"
 		},{
 			"name": "puppetlabs/ntp"
+		},{
+			"name": "saz/rsyslog"
 		}
 
 

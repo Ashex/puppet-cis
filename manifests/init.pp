@@ -48,5 +48,6 @@ cis::params {
   include cis::pam
   include cis::filesystem
   include cis::ntp
+  include cis::rsyslog
 
 }
